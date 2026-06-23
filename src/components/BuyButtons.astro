@@ -1,0 +1,141 @@
+---
+// Buy Buttons — major retailers
+const retailers = [
+  {
+    name: 'Amazon',
+    icon: '📦',
+    url: 'https://www.amazon.com/s?k=I%27ll+Show+Papi+I+Know+My+ABCs',
+    label: 'Buy on Amazon',
+    primary: true,
+  },
+  {
+    name: 'Barnes & Noble',
+    icon: '🏪',
+    url: 'https://www.barnesandnoble.com/s/show+papi',
+    label: 'Buy on Barnes & Noble',
+    primary: false,
+  },
+  {
+    name: 'Bookshop.org',
+    icon: '📗',
+    url: 'https://bookshop.org/search?keywords=show+papi',
+    label: 'Buy on Bookshop.org',
+    primary: false,
+  },
+  {
+    name: 'Target',
+    icon: '🎯',
+    url: 'https://www.target.com/s?searchTerm=show+papi',
+    label: 'Buy on Target',
+    primary: false,
+  },
+];
+---
+
+<section id="buy" class="buy">
+  <div class="container buy-inner">
+    <div class="buy-text">
+      <p class="section-label">Get the Book</p>
+      <h2 class="section-title">
+        Pick Up Your Copy Today
+      </h2>
+      <p class="section-body">
+        Available in hardcover and paperback wherever children's books are
+        sold. Choose your favourite retailer below.
+      </p>
+    </div>
+
+    <div class="buy-buttons">
+      {retailers.map((r) => (
+        <a
+          href={r.url}
+          class={`buy-btn ${r.primary ? 'buy-btn--primary' : ''}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={r.label}
+        >
+          <span class="buy-icon">{r.icon}</span>
+          <span class="buy-label">{r.label}</span>
+          <span class="buy-arrow">→</span>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .buy {
+    background: #fff;
+  }
+
+  .buy-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .buy-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.875rem;
+  }
+
+  .buy-btn {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+    border-radius: var(--radius);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1rem;
+    background: var(--color-cream);
+    color: var(--color-navy);
+    border: 2px solid transparent;
+    transition: border-color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+
+  .buy-btn:hover {
+    border-color: var(--color-coral);
+    transform: translateX(4px);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  }
+
+  .buy-btn--primary {
+    background: var(--color-coral);
+    color: #fff;
+  }
+
+  .buy-btn--primary:hover {
+    border-color: #d94f4f;
+  }
+
+  .buy-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+  }
+
+  .buy-label {
+    flex: 1;
+  }
+
+  .buy-arrow {
+    font-size: 1.1rem;
+    opacity: 0.6;
+    transition: opacity 0.15s, transform 0.15s;
+  }
+
+  .buy-btn:hover .buy-arrow {
+    opacity: 1;
+    transform: translateX(3px);
+  }
+
+  @media (max-width: 768px) {
+    .buy-inner {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+  }
+</style>

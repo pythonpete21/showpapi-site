@@ -1,0 +1,137 @@
+---
+// Author / About section
+---
+
+<section id="about" class="about">
+  <div class="container about-inner">
+    <div class="author-avatar" aria-hidden="true">
+      <img
+        src="/images/author-photo.jpg"
+        alt="Author photo"
+        width="200"
+        height="200"
+        loading="lazy"
+        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+      />
+      <div class="avatar-placeholder">✍️</div>
+    </div>
+
+    <div class="about-text">
+      <p class="section-label">Meet the Author</p>
+      <h2 class="section-title">A Story Born From Love</h2>
+      <p class="section-body">
+        The Show Papi series was created to capture a feeling every parent
+        knows — that heart-bursting pride when your child runs up and says
+        <em>"Watch me, I can do it!"</em>
+      </p>
+      <p class="section-body">
+        Written for the little ones who want to show off what they've learned,
+        and for the parents cheering them on every step of the way, each book
+        in the series is a love letter to family, curiosity, and the magic of
+        those first milestones.
+      </p>
+      <div class="author-social">
+        <a
+          href="https://www.instagram.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="social-link"
+          aria-label="Instagram"
+        >
+          📸 Instagram
+        </a>
+        <a
+          href="mailto:hello@showpapi.com"
+          class="social-link"
+          aria-label="Email"
+        >
+          ✉️ Contact
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .about {
+    background: var(--color-cream);
+  }
+
+  .about-inner {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .author-avatar {
+    flex-shrink: 0;
+  }
+
+  .author-avatar img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 0 0 6px var(--color-sunshine), var(--shadow);
+  }
+
+  .avatar-placeholder {
+    display: none;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--color-sunshine), var(--color-coral));
+    font-size: 4rem;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 0 6px var(--color-sunshine), var(--shadow);
+  }
+
+  .about-text .section-body {
+    margin-bottom: 1.25rem;
+  }
+
+  .author-social {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 0.5rem;
+  }
+
+  .social-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.5rem 1.2rem;
+    border-radius: 3rem;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-decoration: none;
+    background: #fff;
+    color: var(--color-navy);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    border: 2px solid transparent;
+    transition: border-color 0.15s, transform 0.15s;
+  }
+
+  .social-link:hover {
+    border-color: var(--color-coral);
+    transform: translateY(-2px);
+  }
+
+  @media (max-width: 768px) {
+    .about-inner {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+
+    .author-avatar {
+      margin: 0 auto;
+    }
+
+    .author-social {
+      justify-content: center;
+    }
+  }
+</style>

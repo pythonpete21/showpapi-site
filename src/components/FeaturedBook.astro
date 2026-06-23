@@ -1,0 +1,151 @@
+---
+// Featured Book — "I'll Show Papi... I Know My ABCs"
+---
+
+<section id="featured" class="featured">
+  <div class="container feat-inner">
+    <div class="feat-cover">
+      <div class="cover-frame">
+        <img
+          src="/images/abcs-cover.png"
+          alt="Book cover: I'll Show Papi… I Know My ABCs"
+          width="360"
+          height="440"
+          loading="lazy"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+        />
+        <div class="cover-placeholder" aria-hidden="true">
+          <span>📖</span>
+          <p>I'll Show Papi…<br />I Know My ABCs</p>
+        </div>
+      </div>
+      <div class="book-tag">Book 1 of the Series</div>
+    </div>
+
+    <div class="feat-text">
+      <p class="section-label">Featured Book</p>
+      <h2 class="section-title">
+        I'll Show Papi…<br />I Know My ABCs
+      </h2>
+      <p class="section-body">
+        In this debut title, a bright young child is ready to prove something
+        special — they know every letter of the alphabet! Join the adventure as
+        each page bursts with color, confidence, and the heartwarming moment of
+        showing Papi just how much they've learned.
+      </p>
+
+      <ul class="book-details">
+        <li><strong>Ages:</strong> 2 – 6</li>
+        <li><strong>Format:</strong> Hardcover &amp; Paperback</li>
+        <li><strong>Pages:</strong> 32</li>
+        <li><strong>Reading Level:</strong> Pre-K / Kindergarten</li>
+      </ul>
+
+      <a href="#buy" class="btn btn-primary">🛒 Get Your Copy</a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .featured {
+    background: linear-gradient(160deg, #f0fafb 0%, #e6f9f8 100%);
+  }
+
+  .feat-inner {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  /* Cover */
+  .feat-cover {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .cover-frame {
+    width: 280px;
+    border-radius: 1.25rem;
+    box-shadow: var(--shadow), 0 0 0 6px var(--color-sky);
+    overflow: hidden;
+    background: #e8e0d4;
+    min-height: 340px;
+  }
+
+  .cover-frame img {
+    width: 100%;
+    border-radius: 1.25rem;
+  }
+
+  .cover-placeholder {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    width: 100%;
+    min-height: 340px;
+    background: linear-gradient(135deg, #4ecdc4, #1a9e96);
+    border-radius: 1.25rem;
+    padding: 2rem;
+    text-align: center;
+  }
+
+  .cover-placeholder span {
+    font-size: 4rem;
+  }
+
+  .cover-placeholder p {
+    font-size: 1.1rem;
+    font-weight: 900;
+    color: #fff;
+    line-height: 1.3;
+  }
+
+  .book-tag {
+    background: var(--color-sky);
+    color: var(--color-navy);
+    font-weight: 800;
+    font-size: 0.8rem;
+    padding: 0.35rem 1rem;
+    border-radius: 3rem;
+    letter-spacing: 0.04em;
+  }
+
+  /* Text */
+  .book-details {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .book-details li {
+    font-size: 0.95rem;
+    color: var(--color-muted);
+  }
+
+  .book-details strong {
+    color: var(--color-navy);
+  }
+
+  @media (max-width: 768px) {
+    .feat-inner {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+
+    .feat-cover {
+      margin: 0 auto;
+    }
+
+    .book-details {
+      max-width: 320px;
+      margin-inline: auto;
+    }
+  }
+</style>

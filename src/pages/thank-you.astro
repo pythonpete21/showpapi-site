@@ -1,0 +1,62 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout
+  title="Thanks for signing up! | Show Papi"
+  description="You're on the list! We'll be in touch when new Show Papi books arrive."
+>
+  <Header />
+  <main>
+    <section class="thank-you">
+      <div class="container ty-inner">
+        <div class="ty-emoji">🎉</div>
+        <h1>You're on the list!</h1>
+        <p>
+          Thanks for signing up. We'll let you know as soon as new Show Papi
+          books are available — along with exclusive discounts and free activity
+          pages!
+        </p>
+        <a href="/" class="btn btn-primary">← Back to Home</a>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .thank-you {
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .ty-inner {
+    max-width: 540px;
+    padding: 4rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+  }
+
+  .ty-emoji {
+    font-size: 4rem;
+    line-height: 1;
+  }
+
+  h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 900;
+    color: var(--color-navy);
+  }
+
+  p {
+    font-size: 1.1rem;
+    color: var(--color-muted);
+  }
+</style>

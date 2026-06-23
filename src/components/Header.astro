@@ -1,0 +1,188 @@
+---
+// Site-wide navigation header
+---
+
+<header class="site-header">
+  <div class="container nav-inner">
+    <a href="/" class="brand" aria-label="Show Papi — Home">
+      <span class="brand-icon">📚</span>
+      <span class="brand-name">Show Papi</span>
+    </a>
+
+    <nav aria-label="Main navigation">
+      <ul class="nav-links">
+        <li><a href="#series">Series</a></li>
+        <li><a href="#featured">Book 1</a></li>
+        <li><a href="#coming-soon">Coming Soon</a></li>
+        <li><a href="#about">About</a></li>
+        <li>
+          <a href="#buy" class="btn btn-primary nav-cta">Buy Now</a>
+        </li>
+      </ul>
+    </nav>
+
+    <button class="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-nav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+    <ul>
+      <li><a href="#series">Series</a></li>
+      <li><a href="#featured">Book 1</a></li>
+      <li><a href="#coming-soon">Coming Soon</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#buy">Buy Now</a></li>
+    </ul>
+  </div>
+</header>
+
+<script>
+  const hamburger = document.querySelector('.hamburger') as HTMLButtonElement;
+  const mobileNav = document.querySelector('.mobile-nav') as HTMLElement;
+
+  hamburger?.addEventListener('click', () => {
+    const isOpen = hamburger.getAttribute('aria-expanded') === 'true';
+    hamburger.setAttribute('aria-expanded', String(!isOpen));
+    mobileNav.setAttribute('aria-hidden', String(isOpen));
+    mobileNav.classList.toggle('open', !isOpen);
+  });
+
+  // Close on nav link click
+  mobileNav?.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => {
+      hamburger.setAttribute('aria-expanded', 'false');
+      mobileNav.setAttribute('aria-hidden', 'true');
+      mobileNav.classList.remove('open');
+    });
+  });
+</script>
+
+<style>
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(255, 249, 240, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+  }
+
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 68px;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    font-weight: 900;
+    font-size: 1.25rem;
+    color: var(--color-navy);
+  }
+
+  .brand-icon {
+    font-size: 1.5rem;
+    line-height: 1;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--color-navy);
+    transition: color 0.15s;
+  }
+
+  .nav-links a:hover {
+    color: var(--color-coral);
+  }
+
+  .nav-cta {
+    font-size: 0.875rem !important;
+    padding: 0.55rem 1.2rem !important;
+  }
+
+  /* Hamburger */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.4rem;
+  }
+
+  .hamburger span {
+    display: block;
+    width: 24px;
+    height: 2.5px;
+    background: var(--color-navy);
+    border-radius: 4px;
+    transition: transform 0.2s, opacity 0.2s;
+  }
+
+  .hamburger[aria-expanded="true"] span:nth-child(1) {
+    transform: translateY(7.5px) rotate(45deg);
+  }
+  .hamburger[aria-expanded="true"] span:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger[aria-expanded="true"] span:nth-child(3) {
+    transform: translateY(-7.5px) rotate(-45deg);
+  }
+
+  /* Mobile nav */
+  .mobile-nav {
+    display: none;
+    background: rgba(255, 249, 240, 0.98);
+    padding: 1rem 1.5rem 1.5rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.07);
+  }
+
+  .mobile-nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .mobile-nav a {
+    display: block;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--color-navy);
+    text-decoration: none;
+    padding: 0.3rem 0;
+  }
+
+  .mobile-nav a:hover {
+    color: var(--color-coral);
+  }
+
+  @media (max-width: 768px) {
+    .nav-links {
+      display: none;
+    }
+
+    .hamburger {
+      display: flex;
+    }
+
+    .mobile-nav.open {
+      display: block;
+    }
+  }
+</style>
