@@ -1,0 +1,187 @@
+---
+// Email Signup — series updates form
+---
+
+<section id="signup" class="signup">
+  <div class="container signup-inner">
+    <div class="signup-content">
+      <p class="section-label">Stay in the Loop</p>
+      <h2 class="section-title">
+        Never Miss a New Show Papi Book
+      </h2>
+      <p class="section-body">
+        Join our family of readers! Get early access to new titles, behind-the-scenes
+        peeks, and exclusive resources for parents and educators — delivered straight
+        to your inbox.
+      </p>
+
+      <ul class="perks">
+        <li>📬 New book release announcements</li>
+        <li>🎁 Exclusive early-bird discounts</li>
+        <li>🖨️ Free printable activity pages</li>
+        <li>📚 Reading tips for parents &amp; teachers</li>
+      </ul>
+    </div>
+
+    <div class="signup-form-wrap">
+      <form
+        class="signup-form"
+        name="series-updates"
+        method="POST"
+        action="/thank-you"
+        data-netlify="true"
+        novalidate
+      >
+        <input type="hidden" name="form-name" value="series-updates" />
+
+        <div class="form-group">
+          <label for="name">Your Name</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Jane Smith"
+            autocomplete="name"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="jane@example.com"
+            autocomplete="email"
+            required
+          />
+        </div>
+
+        <div class="form-group form-group--check">
+          <input type="checkbox" id="consent" name="consent" required />
+          <label for="consent">
+            I agree to receive updates about the Show Papi series. No spam, ever.
+          </label>
+        </div>
+
+        <button type="submit" class="btn btn-primary signup-submit">
+          ✉️ Sign Me Up!
+        </button>
+      </form>
+      <p class="privacy-note">We respect your privacy. Unsubscribe at any time.</p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .signup {
+    background: linear-gradient(135deg, #fff9f0 0%, #ffecd6 100%);
+  }
+
+  .signup-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .perks {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin-top: 1.5rem;
+  }
+
+  .perks li {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-navy);
+  }
+
+  /* Form */
+  .signup-form-wrap {
+    background: #fff;
+    border-radius: var(--radius);
+    padding: 2.25rem;
+    box-shadow: var(--shadow);
+  }
+
+  .signup-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .form-group label {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--color-navy);
+  }
+
+  .form-group input[type="text"],
+  .form-group input[type="email"] {
+    padding: 0.75rem 1rem;
+    border: 2px solid #e5e7eb;
+    border-radius: 0.6rem;
+    font-family: var(--font-main);
+    font-size: 1rem;
+    color: var(--color-text);
+    background: var(--color-cream);
+    transition: border-color 0.15s ease;
+    outline: none;
+  }
+
+  .form-group input[type="text"]:focus,
+  .form-group input[type="email"]:focus {
+    border-color: var(--color-coral);
+  }
+
+  .form-group--check {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .form-group--check input {
+    margin-top: 0.2rem;
+    width: 1.1rem;
+    height: 1.1rem;
+    flex-shrink: 0;
+    accent-color: var(--color-coral);
+  }
+
+  .form-group--check label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--color-muted);
+  }
+
+  .signup-submit {
+    width: 100%;
+    justify-content: center;
+    font-size: 1.05rem;
+    padding: 1rem;
+  }
+
+  .privacy-note {
+    margin-top: 0.75rem;
+    font-size: 0.8rem;
+    color: var(--color-muted);
+    text-align: center;
+  }
+
+  @media (max-width: 768px) {
+    .signup-inner {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+  }
+</style>

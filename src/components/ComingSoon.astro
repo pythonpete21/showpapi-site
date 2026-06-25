@@ -1,0 +1,136 @@
+---
+// Coming Soon - future titles in the series
+const upcomingBooks = [
+  {
+    emoji: '🔢',
+    title: "I'll Show Papi... I Know My 123s",
+    description: "Numbers come alive as our young hero counts their way through a colorful adventure -- and can't wait to show Papi!",
+    status: 'Coming Soon',
+  },
+  {
+    emoji: '🎨',
+    title: "I'll Show Papi... I Know My Colors",
+    description: "From red apples to blue skies, every page is a rainbow of discovery ready to be shared with Papi.",
+    status: 'Coming Soon',
+  },
+  {
+    emoji: '🔷',
+    title: "I'll Show Papi... I Know My Shapes",
+    description: "Squares, circles, triangles and more -- a geometric adventure the whole family will enjoy.",
+    status: 'Coming Soon',
+  },
+];
+---
+
+<section id="coming-soon" class="coming-soon">
+  <div class="container">
+    <div class="cs-header">
+      <p class="section-label">More Books on the Way</p>
+      <h2 class="section-title">The Series Keeps Growing</h2>
+      <p class="section-body">
+        The Show Papi family is just getting started. Sign up below to be the
+        first to know when new titles drop.
+      </p>
+    </div>
+
+    <div class="cs-grid">
+      {upcomingBooks.map((book) => (
+        <article class="cs-card">
+          <div class="cs-emoji">{book.emoji}</div>
+          <div class="cs-badge">{book.status}</div>
+          <h3 class="cs-title">{book.title}</h3>
+          <p class="cs-desc">{book.description}</p>
+        </article>
+      ))}
+    </div>
+
+    <div class="cs-cta">
+      <a href="#signup" class="btn btn-secondary">🔔 Notify Me When They're Ready</a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .coming-soon {
+    background: var(--color-navy);
+    color: #fff;
+  }
+
+  .coming-soon .section-label {
+    color: var(--color-sunshine);
+  }
+
+  .coming-soon .section-title {
+    color: #fff;
+  }
+
+  .coming-soon .section-body {
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  .cs-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .cs-header .section-body {
+    margin-inline: auto;
+  }
+
+  .cs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .cs-card {
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: var(--radius);
+    padding: 2rem;
+    position: relative;
+    transition: transform 0.2s ease, background 0.2s ease;
+  }
+
+  .cs-card:hover {
+    transform: translateY(-3px);
+    background: rgba(255, 255, 255, 0.11);
+  }
+
+  .cs-emoji {
+    font-size: 2.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .cs-badge {
+    display: inline-block;
+    background: var(--color-sunshine);
+    color: var(--color-navy);
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.2rem 0.7rem;
+    border-radius: 3rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .cs-title {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 0.6rem;
+    line-height: 1.3;
+  }
+
+  .cs-desc {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.65);
+    line-height: 1.6;
+  }
+
+  .cs-cta {
+    text-align: center;
+  }
+</style>

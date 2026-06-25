@@ -1,0 +1,166 @@
+---
+export interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+}
+
+const {
+  title = "Show Papi | Children's Book Series",
+  description =
+    "Show Papi is a fun, educational children's book series. Start with I'll Show Papi - I Know My ABCs and follow along as more books arrive!",
+  image = '/images/og-cover.png',
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={new URL(image, Astro.site)} />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={new URL(image, Astro.site)} />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
+
+<style is:global>
+  *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  :root {
+    --color-sunshine:  #FFCD3C;
+    --color-coral:     #FF6B6B;
+    --color-sky:       #4ECDC4;
+    --color-navy:      #1A2238;
+    --color-cream:     #FFF9F0;
+    --color-text:      #2D2D2D;
+    --color-muted:     #6B7280;
+    --font-main: 'Nunito', system-ui, sans-serif;
+    --max-width: 1100px;
+    --radius: 1rem;
+    --shadow: 0 4px 24px rgba(0,0,0,0.10);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-main);
+    background: var(--color-cream);
+    color: var(--color-text);
+    line-height: 1.6;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  a {
+    color: inherit;
+  }
+
+  section {
+    padding: 5rem 1.5rem;
+  }
+
+  .container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-coral);
+    margin-bottom: 0.75rem;
+  }
+
+  .section-title {
+    font-size: clamp(1.75rem, 4vw, 2.75rem);
+    font-weight: 900;
+    line-height: 1.15;
+    color: var(--color-navy);
+    margin-bottom: 1rem;
+  }
+
+  .section-body {
+    font-size: 1.1rem;
+    color: var(--color-muted);
+    max-width: 55ch;
+    margin-bottom: 2rem;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.6rem;
+    border-radius: 3rem;
+    font-family: var(--font-main);
+    font-weight: 800;
+    font-size: 1rem;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+
+  .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  }
+
+  .btn-primary {
+    background: var(--color-coral);
+    color: #fff;
+  }
+
+  .btn-secondary {
+    background: var(--color-sunshine);
+    color: var(--color-navy);
+  }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--color-navy);
+    border: 2.5px solid var(--color-navy);
+  }
+</style>

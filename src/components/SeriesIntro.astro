@@ -1,0 +1,100 @@
+---
+// Series Intro — short description of the series concept
+---
+
+<section id="series" class="series-intro">
+  <div class="container si-inner">
+    <div class="si-text">
+      <p class="section-label">About the Series</p>
+      <h2 class="section-title">What is Show Papi?</h2>
+      <p class="section-body">
+        <strong>Show Papi</strong> is a children's book series that celebrates the
+        joyful bond between a child and their father — and the pride that comes
+        from learning something new.
+      </p>
+      <p class="section-body">
+        In each book, a young child earns the chance to say <em>"I'll Show Papi!"</em>
+        — sharing a new skill with the most important person in their world. From
+        ABCs to 123s and beyond, every title builds early literacy and numeracy
+        while wrapping kids in warmth, encouragement, and family love.
+      </p>
+    </div>
+
+    <div class="si-cards">
+      <div class="si-card">
+        <span class="card-icon">🎓</span>
+        <h3>Early Learning</h3>
+        <p>Each book targets a core developmental milestone — letters, numbers, shapes, and more.</p>
+      </div>
+      <div class="si-card">
+        <span class="card-icon">❤️</span>
+        <h3>Family First</h3>
+        <p>Stories rooted in the father-child relationship, celebrating everyday pride and connection.</p>
+      </div>
+      <div class="si-card">
+        <span class="card-icon">📖</span>
+        <h3>Growing Series</h3>
+        <p>New titles are always on the way — each one a new milestone, a new adventure.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .series-intro {
+    background: #fff;
+  }
+
+  .si-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .si-text .section-body {
+    margin-bottom: 1.25rem;
+  }
+
+  .si-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .si-card {
+    background: var(--color-cream);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    box-shadow: var(--shadow);
+  }
+
+  .card-icon {
+    font-size: 2rem;
+    line-height: 1;
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+  }
+
+  .si-card h3 {
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: var(--color-navy);
+    margin-bottom: 0.35rem;
+  }
+
+  .si-card p {
+    font-size: 0.95rem;
+    color: var(--color-muted);
+  }
+
+  @media (max-width: 768px) {
+    .si-inner {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+  }
+</style>
