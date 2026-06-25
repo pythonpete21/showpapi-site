@@ -41,7 +41,15 @@
         <li><strong>Reading Level:</strong> Pre-K / Kindergarten</li>
       </ul>
 
-      <a href="#buy" class="btn btn-primary">🛒 Get Your Copy</a>
+      <a
+        href="https://books.apple.com/us/book/ill-show-papi-i-know-my-abcs/id1466316316"
+        class="btn btn-primary"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Read I'll Show Papi… I Know My ABCs on Apple Books"
+      >
+        📱 Read on Apple Books
+      </a>
     </div>
   </div>
 </section>
@@ -59,26 +67,30 @@
   }
 
   /* Cover */
-  .feat-cover {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.75rem;
-  }
+.feat-cover {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
 
-  .cover-frame {
-    width: 280px;
-    border-radius: 1.25rem;
-    box-shadow: var(--shadow), 0 0 0 6px var(--color-sky);
-    overflow: hidden;
-    background: #e8e0d4;
-    min-height: 340px;
-  }
+.cover-frame {
+  width: 280px;
+  border-radius: 1.25rem;
+  box-shadow: var(--shadow), 0 0 0 6px var(--color-sky);
+  overflow: hidden;
+  background: #e8e0d4;
+  padding: 0px;                    /* Adds breathing room around the image */
+  box-sizing: border-box;
+}
 
-  .cover-frame img {
-    width: 100%;
-    border-radius: 1.25rem;
-  }
+.cover-frame img {
+  width: 100%;
+  height: auto;                     /* Let the image keep its natural height */
+  display: block;
+  border-radius: 1rem;
+  object-fit: contain;              /* Prevents cropping */
+}
 
   .cover-placeholder {
     display: none;

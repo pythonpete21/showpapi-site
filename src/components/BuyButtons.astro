@@ -2,11 +2,19 @@
 // Buy Buttons — major retailers
 const retailers = [
   {
+    name: 'Apple Books',
+    icon: '📱',
+    thumb: '/images/abcs-cover.png',
+    url: 'https://books.apple.com/us/book/ill-show-papi-i-know-my-abcs/id1466316316',
+    label: 'Read on Apple Books',
+    primary: true,
+  },
+  {
     name: 'Amazon',
     icon: '📦',
     url: 'https://www.amazon.com/s?k=I%27ll+Show+Papi+I+Know+My+ABCs',
     label: 'Buy on Amazon',
-    primary: true,
+    primary: false,
   },
   {
     name: 'Barnes & Noble',
@@ -54,7 +62,21 @@ const retailers = [
           rel="noopener noreferrer"
           aria-label={r.label}
         >
-          <span class="buy-icon">{r.icon}</span>
+          <span class="buy-icon">
+            {r.thumb ? (
+              <>
+                <img
+                  src={r.thumb}
+                  alt={`${r.name} — book cover thumbnail`}
+                  class="buy-thumb"
+                  width="40"
+                  height="32"
+                  onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"
+                />
+                <span style="display:none" aria-hidden="true">{r.icon}</span>
+              </>
+            ) : r.icon}
+          </span>
           <span class="buy-label">{r.label}</span>
           <span class="buy-arrow">→</span>
         </a>
@@ -115,6 +137,18 @@ const retailers = [
   .buy-icon {
     font-size: 1.5rem;
     flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .buy-thumb {
+    width: 40px;
+    height: 32px;
+    object-fit: contain;
+    border-radius: 0px;
+    display: block;
+    background: #f8f5f0;        /* Optional: light paper color as background */
   }
 
   .buy-label {

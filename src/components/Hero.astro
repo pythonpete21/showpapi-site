@@ -115,17 +115,19 @@
 
   .cover-wrapper {
     position: relative;
-    width: 280px;
+    width: 310px;
     border-radius: 1.25rem;
     box-shadow: var(--shadow), 0 0 0 6px var(--color-sunshine);
     overflow: hidden;
     background: #e8e0d4;
-    min-height: 340px;
   }
 
   .cover-wrapper img {
-    width: 100%;
-    border-radius: 1.25rem;
+  width: 100%;
+  height: auto;                    /* Let image keep natural ratio */
+  display: block;
+  border-radius: 1.25rem;
+  object-fit: contain;             /* Show full image without cropping */
   }
 
   .cover-placeholder {
